@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body class="d-flex flex-column vh-100">
+
+
+    <nav class="navbar text-light p-4">
+        <span id="data"></span>
+        <span>SISTEMA DE MONITORAMENTO DE EPIDEMIAS HEMERGENTES</span>
+        <span id="relogio"></span>
+    </nav>
+
+    <main class="container-fluid p-0 flex-grow-1">
+        <div class="row h-100 m-0">
+            <div class="col-1 d-flex flex-column align-items-center justify-content-center">
+                <a data-bs-toggle="offcanvas" href="#offcanvasCovid" role="button" aria-controls="offcanvasCovid">
+                    <img src="img/covid.png" alt="covid">
+                </a>
+                <span class="text-success">COVID</span>
+            </div>
+            <div class="col-10 d-flex flex-column">
+                <div id="graficoPrincipal" style="height:400px;">
+
+                </div>
+                <div class="mt-auto p-5 d-flex align-items-center justify-content-center">
+                    <a data-bs-toggle="offcanvas" href="#offcanvasEbola" role="button" aria-controls="offcanvasEbola">
+                        <img src="img/ebola.png" alt="ebola">
+                    </a>
+                </div>
+            </div>
+            <div class="col-1 d-flex flex-column align-items-center justify-content-center">
+                <a data-bs-toggle="offcanvas" href="#offcanvasMPOX" role="button" aria-controls="offcanvasMPOX">
+                    <img src="img/mpox.png" alt="mpox">
+                </a>
+                <span class="text-danger">MPOX</span>
+            </div>
+
+        </div>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasCovid" aria-labelledby="offcanvasCovidLabel">
+            <div class="offcanvas-header text-light bg-success ">
+                <img class="imgForm" src="img/covid.png" alt="covid">
+                <h5 class="offcanvas-title" id="offcanvasCovidLabel">Informações: COVID</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="d-flex justify-content-center">
+                    <h3 class="text-success total-casos" data-doenca="covid">Casos registrados:</h3>
+                </div>
+                <hr>
+                <div id="graficoCovid">
+
+                </div>
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <h3 class="text-success">Registar Novo Caso</h3>
+                </div>
+                <form class="form-doenca">
+                    <select class="form-select text-success " name="pais" id="paisCovid">
+                        <option value="Estados unidos">Estados Unidos</option>
+                        <option value="China">China</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Brasil">Brasil</option>
+                        <option value="Russia">Russia</option>
+                    </select>
+                    <button type="submit" class="btn btn-success mt-3" value="covid">Registrar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMPOX" aria-labelledby="offcanvasMPOXLabel">
+            <div class="offcanvas-header text-light bg-danger ">
+                <img class="imgForm" src="img/mpox.png" alt="MPOX">
+                <h5 class="offcanvas-title" id="offcanvasMPOXLabel">Informações: MPOX</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="d-flex justify-content-center">
+                    <h3 class="text-danger total-casos" data-doenca="mpox">Casos registrados:</h3>
+                </div>
+                <hr>
+                <div id="graficoMPOX">
+
+                </div>
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <h3 class="text-danger">Registar Novo Caso</h3>
+                </div>
+                <form class="form-doenca">
+                    <select class="form-select text-danger " name="pais" id="paisMPOX">
+                        <option value="Estados unidos">Estados Unidos</option>
+                        <option value="China">China</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Brasil">Brasil</option>
+                        <option value="Russia">Russia</option>
+                    </select>
+                    <button type="submit" class="btn btn-danger mt-3" value="mpox">Registrar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasEbola" aria-labelledby="offcanvasEbolaLabel">
+            <div class="offcanvas-header text-light bg-purple ">
+                <img class="imgForm" src="img/ebola.png" alt="Ebola">
+                <h5 class="offcanvas-title" id="offcanvasEbolaLabel">Informações: Ebola</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="d-flex justify-content-center">
+                            <h3 class="text-purple total-casos" data-doenca="ebola">Casos registrados:</h3>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-center">
+                            <h3 class="text-purple">Registar Novo Caso</h3>
+                        </div>
+                        <form class="form-doenca">
+                            <select class="form-select text-purple " name="pais" id="paisEbola">
+                                <option value="Estados unidos">Estados Unidos</option>
+                                <option value="China">China</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Russia">Russia</option>
+                            </select>
+                            <button type="submit" class="btn btn-purple mt-3" value="ebola">Registrar</button>
+                        </form>
+                    </div>
+                    <div class="col" id="tabelaEbola"></div>
+                    <div class="col" id="graficoEbola"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

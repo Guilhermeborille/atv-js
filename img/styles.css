@@ -1,0 +1,62 @@
+a {
+    text-decoration: none;
+}
+
+span {
+    text-align: center;
+    display: block;
+    font-weight: bolder;
+}
+
+nav {
+    height: 80px;
+    background: linear-gradient(90deg,rgba(95, 138, 78, 1) 0%, rgba(67, 31, 130, 1) 50%, rgba(140, 35, 46, 1) 100%)
+}
+
+td, tr {
+    text-align: center;
+    color: #800080;
+}
+
+.header-covid {
+    color: white;
+    background-color: green;  
+}
+
+.covid-button {
+    position: fixed;
+    top: 50%;
+    left:10px;
+    color: green;
+    /* transform: translateY(-50%); */
+}
+
+.header-mpox {
+    color: white;
+    background-color: darkred;  
+}
+
+.mpox-button {
+    position: fixed;
+    top: 50%;
+    right:10px;
+    color: darkred;
+}
+
+.header-ebola {
+    color: white;
+    background-color: purple;  
+}
+
+.ebola-button {
+    position: fixed;
+    bottom: 10px;
+    left:50%;
+    color: purple;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+    .table-striped>tbody>tr:nth-child(odd)>th {
+        color: white !important;
+        background-color: purple !important;
+ }
